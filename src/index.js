@@ -76,7 +76,7 @@ refs.divData.classList.remove("hidden");
 function onLoadingEnd() {
 refs.loader.classList.add("hidden");
 }
-
+let errorOccurred = false;
 function onError() {
     if (!errorOccurred) {
         errorOccurred = true;
