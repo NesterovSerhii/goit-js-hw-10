@@ -65,7 +65,7 @@ function catInfoMarkup({ url, breeds }) {
 }
  
 function onLoadingStart(element) {
-  element.classList.add("invisible");
+  element.classList.add("hidden");
   refs.loader.classList.remove("hidden");
 }
 
@@ -80,8 +80,8 @@ refs.loader.classList.add("hidden");
 function onError() {
     if (!errorOccurred) {
         errorOccurred = true;
-        refs.loader.classList.add("invisible");
-        refs.divData.classList.add("invisible");
+        refs.loader.classList.add("hidden");
+        refs.divData.classList.add("hidden");
         Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!");
     }
 }
