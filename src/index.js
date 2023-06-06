@@ -78,9 +78,12 @@ refs.loader.classList.add("hidden");
 }
 
 function onError() {
-    refs.loader.classList.add("hidden");
-    refs.divData.classList.add("hidden");
-    Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!");
+    if (!errorOccurred) {
+        errorOccurred = true;
+        refs.loader.classList.add("invisible");
+        refs.divData.classList.add("invisible");
+        Notiflix.Notify.failure("Oops! Something went wrong! Try reloading the page!");
+    }
 }
 
 refs.select.addEventListener('click', () => {
