@@ -65,16 +65,21 @@ function catInfoMarkup({ url, breeds }) {
 }
  
 function onLoadingStart(element) {
-  element.classList.add("hidden");
-  refs.loader.classList.remove("hidden");
+    element.classList.add("hidden");
+    refs.loader.classList.remove("hidden");
+     Notiflix.Loading.arrows('Loading data, please wait...',{
+  backgroundColor: 'rgba(0,0,0,0.5)',
+});
 }
 
 function updateInfo(markup) {
 refs.divData.innerHTML = markup;
-refs.divData.classList.remove("hidden");
+    refs.divData.classList.remove("hidden");
 }
+
 function onLoadingEnd() {
-refs.loader.classList.add("hidden");
+    refs.loader.classList.add("hidden"); 
+    Notiflix.Loading.remove()
 }
 let errorOccurred = false;
 function onError() {
@@ -87,7 +92,7 @@ function onError() {
 }
 
 refs.select.addEventListener('click', () => {
-refs.error.classList.add("hidden");
+    refs.error.classList.add("hidden");
 });
 refs.divData.addEventListener('click', () => {
 refs.error.classList.add("hidden");
